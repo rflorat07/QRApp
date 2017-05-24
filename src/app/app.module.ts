@@ -4,6 +4,9 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+//Mapas
+import { AgmCoreModule } from 'angular2-google-maps/core';
+
 //servicios
 import { HistorialProvider } from '../providers/historial/historial';
 
@@ -14,18 +17,25 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 import { MyApp } from './app.component';
 
+import { MapaPage } from './../pages/mapa/mapa';
+
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+    MapaPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB5OEFCzZBVx7H8HFahoWTOIkSRgfUG7WU'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
+    MapaPage
   ],
   providers: [
     StatusBar,
@@ -33,8 +43,8 @@ import { MyApp } from './app.component';
     SplashScreen,
     BarcodeScanner,
     HistorialProvider,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     HistorialProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }
