@@ -13,6 +13,7 @@ import { HistorialProvider } from '../providers/historial/historial';
 //plugins
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { Contacts } from '@ionic-native/contacts';
 
 
 import { MyApp } from './app.component';
@@ -38,6 +39,7 @@ import { MapaPage } from './../pages/mapa/mapa';
     MapaPage
   ],
   providers: [
+    Contacts,
     StatusBar,
     InAppBrowser,
     SplashScreen,

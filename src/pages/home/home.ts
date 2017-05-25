@@ -26,8 +26,23 @@ export class HomePage {
     console.log("Realizando scan...");
 
     if (!this.platform.is('cordova')) {
-    //  this.historialProvider.agregar_historial("http://google.com");
-       this.historialProvider.agregar_historial("geo:45.6817659,8.7877235");
+      // this.historialProvider.agregar_historial("http://google.com");
+      // this.historialProvider.agregar_historial("geo:45.6817659,8.7877235");
+
+      /* this.historialProvider.agregar_historial(`BEGIN:VCARD
+         VERSION:2.1
+         N:Kent;Clark
+         FN:Clark Kent
+         ORG:
+         TEL;HOME;VOICE:12345
+         TEL;TYPE=cell:67890
+         ADR;TYPE=work:;;;
+         EMAIL:clark@superman.com
+         END:VCARD` ); */
+
+      this.historialProvider.agregar_historial("MATMSG:TO:rflorat07@gmail.com;SUB:Hola Mundo;BODY:Saludos Roger;;");
+
+
       return;
     }
 
